@@ -1,0 +1,21 @@
+train: /home/swdev/contactEst/InteractionDetectorDDETR/ddetr_dv/data/100DOH/images/train
+test: /home/swdev/contactEst/InteractionDetectorDDETR/ddetr_dv/data/100DOH/images/test
+val: /home/swdev/contactEst/InteractionDetectorDDETR/ddetr_dv/data/100DOH/images/val
+
+nc: 11
+
+names: 
+  0: targetobject
+  1: left hand with no contact
+  2: left hand with self contact
+  3: left hand contacting with other person
+  4: left hand contacting with a portable object
+  5: left hand contacting with a static object
+  6: right hand with no contact
+  7: right hand with self contact
+  8: right hand contacting with other person
+  9: right hand contacting with a portable object
+  10: right hand contacting with a static object
+
+
+backup: backup/
