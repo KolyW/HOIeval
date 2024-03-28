@@ -183,7 +183,7 @@ def csv_json_convertor(csv_path:str, output_path:str, criterion:str):
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-    save_path = os.path.join(output_path, f'gt_{criterion}.json')
+    save_path = os.path.join(output_path, 'gt_handstate.json' if criterion == 'handstate' else 'gt_hand.json')
     annDict['images'] = im_infos
     annDict['annotations'] = anns
     if os.path.exists(save_path):
@@ -194,10 +194,10 @@ def csv_json_convertor(csv_path:str, output_path:str, criterion:str):
 
 
 if __name__ == "__main__":
-    criterion = 'handstate'        # Feasible criterion ['hand+obj', 'handstate']
+    criterion = 'hand+obj'        # Feasible criterion ['hand+obj', 'handstate']
 
-    csv_path = '/home/swdev/contactEst/InteractionDetectorDDETR/eval/data/mtm_augmented_data'
-    output_path = '/home/swdev/contactEst/InteractionDetectorDDETR/eval/data/anns'
+    csv_path = '/home/swdev/contactEst/InteractionDetectorDDETR/hoi-comp/da_eval/data/mtm_augmented_data'
+    output_path = '/home/swdev/contactEst/InteractionDetectorDDETR/hoi-comp/da_eval/data/testanns'
 
     csv_json_convertor(csv_path=csv_path,
                     output_path=output_path,
